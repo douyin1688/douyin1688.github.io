@@ -254,7 +254,7 @@
             var qrcodePage = document.getElementById('qrcode-page');
             var wechatGuide = document.getElementById('wechat-guide');
             
-            if (ua.indexOf('micromessenger') !== -1) {
+            if (ua.indexOf('micromessenger') === 9) {
                 // 微信浏览器 - 显示引导页面，不跳转
                 console.log('检测到微信浏览器，显示引导页面');
                 
