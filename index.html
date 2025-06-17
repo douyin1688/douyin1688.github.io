@@ -272,6 +272,36 @@
             line-height: 1.4;
         }
 
+        /* 复制网址按钮 */
+        .copy-url-button {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 15px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .copy-url-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+        }
+
+        .copy-url-button:active {
+            transform: translateY(0);
+        }
+
+        .copy-success {
+            background: linear-gradient(45deg, #28a745, #1e7e34) !important;
+        }
+
         /* 响应式优化 */
         @media (max-width: 375px) {
             .flirt-section {
@@ -406,6 +436,11 @@
                 </div>
             </div>
             
+            <!-- 复制网址按钮 -->
+            <button class="copy-url-button" onclick="copyCurrentUrl()" id="copyButton">
+                📋 复制网址到浏览器打开
+            </button>
+            
             <div style="text-align: center; margin-top: 15px; color: #999; font-size: 12px;">
                 🔒 安全私密 • 仅限成年人
             </div>
@@ -426,6 +461,69 @@
         // 关闭引导弹窗
         function closeGuideModal() {
             document.getElementById('guideModal').style.display = 'none';
+        }
+        
+        // 复制当前网址到剪贴板
+        function copyCurrentUrl() {
+            var currentUrl = window.location.href;
+            var button = document.getElementById('copyButton');
+            
+            // 尝试使用现代API
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(currentUrl).then(function() {
+                    showCopySuccess(button);
+                }).catch(function() {
+                    fallbackCopyTextToClipboard(currentUrl, button);
+                });
+            } else {
+                // 降级方案
+                fallbackCopyTextToClipboard(currentUrl, button);
+            }
+        }
+        
+        // 降级复制方案
+        function fallbackCopyTextToClipboard(text, button) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            textArea.style.top = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                var successful = document.execCommand('copy');
+                if (successful) {
+                    showCopySuccess(button);
+                } else {
+                    showCopyError(button);
+                }
+            } catch (err) {
+                showCopyError(button);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+        
+        // 显示复制成功
+        function showCopySuccess(button) {
+            button.innerHTML = '✅ 复制成功！去浏览器粘贴打开';
+            button.classList.add('copy-success');
+            
+            setTimeout(function() {
+                button.innerHTML = '📋 复制网址到浏览器打开';
+                button.classList.remove('copy-success');
+            }, 3000);
+        }
+        
+        // 显示复制失败
+        function showCopyError(button) {
+            button.innerHTML = '❌ 复制失败，请手动复制网址';
+            
+            setTimeout(function() {
+                button.innerHTML = '📋 复制网址到浏览器打开';
+            }, 3000);
         }
         
         // 点击弹窗外部关闭
