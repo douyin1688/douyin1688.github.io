@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>小雅上🚪，点击 浏览器打开可视频 可🈷️  想要了</title>
+    <title>小雅上🚪，点击 浏览器打开可视频 可🈷️  想要了</title>
     <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💋</text></svg>">
     
     <style type="text/css">
@@ -33,7 +33,7 @@
 
         /* 顶部挑逗区域 - 占据屏幕上1/3 */
         .flirt-section {
-            height: 33vh;
+            height: 40vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -45,14 +45,14 @@
         }
 
         .avatar {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(45deg, #ff6b6b, #ee5a52);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
+            font-size: 35px;
             margin-bottom: 15px;
             box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
         }
@@ -63,7 +63,7 @@
         }
 
         .name {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
             margin-bottom: 5px;
         }
@@ -75,7 +75,7 @@
 
         .flirt-message {
             background: rgba(255, 255, 255, 0.95);
-            padding: 20px;
+            padding: 25px;
             border-radius: 15px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             max-width: 320px;
@@ -83,115 +83,193 @@
         }
 
         .flirt-text {
-            font-size: 16px;
+            font-size: 18px;
             line-height: 1.5;
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .highlight-text {
             background: linear-gradient(45deg, #ff6b6b, #ee5a52);
             color: white;
-            padding: 10px 15px;
+            padding: 12px 18px;
             border-radius: 10px;
             font-weight: bold;
-            margin-top: 10px;
-            font-size: 15px;
+            margin-bottom: 20px;
+            font-size: 16px;
         }
 
-        /* 操作指南区域 - 占据屏幕下2/3 */
-        .guide-section {
-            min-height: 67vh;
+        /* 深入聊天按钮区域 */
+        .chat-button-section {
+            min-height: 60vh;
             background: white;
             border-radius: 25px 25px 0 0;
-            padding: 30px 20px 40px;
+            padding: 40px 20px;
             margin-top: -10px;
             box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
-        }
-
-        .guide-title {
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 25px;
-        }
-
-        /* 步骤卡片 - 简化设计 */
-        .step-item {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 18px;
-            margin-bottom: 15px;
-            border-left: 4px solid #007bff;
             display: flex;
-            align-items: flex-start;
-        }
-
-        .step-number {
-            background: linear-gradient(45deg, #007bff, #0056b3);
-            color: white;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+        }
+
+        .main-chat-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 20px 40px;
+            font-size: 20px;
             font-weight: bold;
-            margin-right: 12px;
-            flex-shrink: 0;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            min-width: 250px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .step-content {
-            flex: 1;
+        .main-chat-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.5);
         }
 
-        .step-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 8px;
+        .main-chat-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
         }
 
-        .step-desc {
-            font-size: 14px;
+        .main-chat-button:hover::before {
+            left: 100%;
+        }
+
+        .button-hint {
             color: #666;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 30px;
             line-height: 1.4;
         }
 
-        .step-visual {
-            font-size: 20px;
-            margin: 8px 0;
+        .features-list {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 300px;
         }
 
-        .step-options {
-            background: #e3f2fd;
-            padding: 10px;
-            border-radius: 8px;
-            margin-top: 8px;
-            font-size: 13px;
-            color: #1565c0;
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 15px;
         }
 
-        /* 底部提示 */
-        .bottom-tip {
+        .feature-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-icon {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        /* 弹窗样式 */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 20px;
+            max-width: 350px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .modal-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            padding-right: 30px;
+        }
+
+        .guide-images-container {
+            margin: 20px 0;
+        }
+
+        .guide-image {
+            width: 100%;
+            max-width: 280px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .guide-text {
+            background: #ffe6e6;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            color: #333;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .browser-benefits {
             background: linear-gradient(45deg, #ff6b6b, #ee5a52);
             color: white;
-            padding: 15px;
+            padding: 18px;
             border-radius: 12px;
-            text-align: center;
             margin-top: 20px;
-            font-size: 15px;
-            font-weight: bold;
+            text-align: center;
         }
 
-        .safety-note {
-            text-align: center;
-            color: #999;
-            font-size: 12px;
-            margin-top: 15px;
-            line-height: 1.3;
+        .benefits-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .benefits-list {
+            font-size: 14px;
+            line-height: 1.4;
         }
 
         /* 响应式优化 */
@@ -200,26 +278,33 @@
                 padding: 15px;
             }
             
-            .guide-section {
-                padding: 25px 15px 30px;
+            .chat-button-section {
+                padding: 30px 15px;
             }
             
-            .flirt-message {
-                padding: 18px;
+            .main-chat-button {
+                min-width: 220px;
+                padding: 18px 35px;
+                font-size: 18px;
             }
             
-            .step-item {
-                padding: 15px;
+            .modal-content {
+                padding: 20px 15px;
+                max-width: 320px;
+            }
+            
+            .modal-title {
+                font-size: 16px;
             }
         }
 
         @media (max-height: 667px) {
             .flirt-section {
-                height: 30vh;
+                height: 35vh;
             }
             
-            .guide-section {
-                min-height: 70vh;
+            .chat-button-section {
+                min-height: 65vh;
             }
         }
     </style>
@@ -248,47 +333,82 @@
         </div>
     </div>
 
-    <!-- 操作指南区域 -->
-    <div class="guide-section">
-        <div class="guide-title">💡 解锁完整聊天功能（请在手机浏览器中打开）</div>
+    <!-- 深入聊天按钮区域 -->
+    <div class="chat-button-section">
+        <button class="main-chat-button" onclick="showGuideModal()">
+            🔥 开始深入聊天 🔥
+        </button>
         
-        <!-- 第一步 -->
-        <div class="step-item">
-            <div class="step-number">1</div>
-            <div class="step-content">
-                <div class="step-title">点击右上角三个点</div>
-                <div class="step-visual">📱 ➡️ ⋯</div>
+        <div class="button-hint">
+            点击上方按钮，解锁完整聊天功能<br>
+            包括视频通话、<span class="special-text">私密互动</span>等
+        </div>
+        
+        <div class="features-list">
+            <div class="feature-item">
+                <span class="feature-icon">📹</span>
+                <span>高清视频通话</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">💬</span>
+                <span><span class="special-text">私密</span>文字聊天</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">📸</span>
+                <span>照片分享功能</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🎯</span>
+                <span>附近的人匹配</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🔒</span>
+                <span>端到端加密保护</span>
             </div>
         </div>
+    </div>
 
-        <!-- 第二步 -->
-        <div class="step-item">
-            <div class="step-number">2</div>
-            <div class="step-content">
-                <div class="step-title">选择浏览器打开</div>
-                <div class="step-visual">🌐 ✅</div>
+    <!-- 引导弹窗 -->
+    <div class="modal-overlay" id="guideModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeGuideModal()">×</button>
+            
+            <div class="modal-title">🔥 想要更<span class="special-text">刺激</span>的体验吗？</div>
+            
+            <div style="color: #666; font-size: 14px; margin-bottom: 15px; line-height: 1.4;">
+                小雅正在等你，按照下面步骤解锁<span class="special-text">私密功能</span>～
             </div>
-        </div>
-
-        <!-- 第三步 -->
-        <div class="step-item">
-            <div class="step-number">3</div>
-            <div class="step-content">
-                <div class="step-title">开始私密聊天</div>
-                <div class="step-visual">💬 🔥</div>
-                <div class="step-desc">
-                    浏览器打开后，即可享受完整的<span class="special-text">深度聊天</span>功能
+            
+            <!-- 两个引导图放在一起 -->
+            <div class="guide-images-container">
+                <img src="./guide1.png" alt="步骤1引导图" class="guide-image">
+                <img src="./guide2.png" alt="步骤2引导图" class="guide-image">
+            </div>
+            
+            <div class="guide-text">
+                <strong>按上图操作：</strong><br>
+                1. 点击右上角 ⋯ 菜单<br>
+                2. 选择"浏览器打开"<br>
+                <span style="color: #e74c3c; font-size: 13px;">
+                    让我们开始<span class="special-text">深入了解</span>，马上就能和我<span class="special-text">亲密接触</span>了💕
+                </span>
+            </div>
+            
+            <div class="browser-benefits">
+                <div class="benefits-title">
+                    🔥 浏览器里我更<span class="special-text">放得开</span>
+                </div>
+                <div class="benefits-list">
+                    • 高清视频<span class="special-text">私聊</span><br>
+                    • 更多<span class="special-text">诱惑</span>照片<br>
+                    • 实时<span class="special-text">互动</span>体验<br>
+                    • 只进入身体，不进入生活 💋
                 </div>
             </div>
-        </div>
-
-        <!-- 底部提示 -->
-        <div class="bottom-tip">
-            🔥 想要更多刺激？按上面步骤操作～
-        </div>
-
-        <div class="safety-note">
-            🔒 浏览器环境更安全 • 仅限年龄25+人使用
+            
+            <div style="text-align: center; margin-top: 15px; color: #999; font-size: 12px;">
+                🔒 安全私密 • 仅限成年人
+            </div>
         </div>
     </div>
 
@@ -297,6 +417,23 @@
         if (window.top !== window.self) {
             window.top.location = window.self.location;
         }
+        
+        // 显示引导弹窗
+        function showGuideModal() {
+            document.getElementById('guideModal').style.display = 'flex';
+        }
+        
+        // 关闭引导弹窗
+        function closeGuideModal() {
+            document.getElementById('guideModal').style.display = 'none';
+        }
+        
+        // 点击弹窗外部关闭
+        document.getElementById('guideModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeGuideModal();
+            }
+        });
         
         // 检测浏览器类型，如果已经在浏览器中则自动跳转
         function checkBrowserAndRedirect() {
